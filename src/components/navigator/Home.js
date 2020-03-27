@@ -9,12 +9,38 @@ export class Home extends Component{
         
         this.state = {
             data: [
-                "test", "test2", "asd", "df", "asdf", "df"
-            ]
+                "1.jpg",
+                "2.jpg",
+                "3.jpg",
+                "4.jpg",
+                "5.jpg",
+                "6.jpg",
+                "7.jpg"
+            ],
+            windowWidth: 0
         };
-
+        
+        this.updateDimensions = this.updateDimensions.bind(this);
     };
 
+    updateDimensions(){
+        console.log("called");
+        this.setState({
+            windowWidth: window.innerWidth
+        })
+    }
+
+    componentDidMount(){
+        console.log("mount");
+        this.updateDimensions();
+        window.addEventListener("resize", this.updateDimensions);
+    }
+    
+    componentWillUnmount(){
+        window.removeEventListener("resize", this.updateDimensions);
+    }
+
+   
 
     render(){
 
@@ -23,7 +49,7 @@ export class Home extends Component{
                 {
                     this.state.data.length === 0 ? <Loading/> : 
                     this.state.data.map((d, i) => {
-                        return <ImageCard/>
+                        return <ImageCard fileName={d} parentWidth={this.state.windowWidth}/>
                     })
                 }
             </div>
