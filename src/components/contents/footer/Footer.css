@@ -1,0 +1,33 @@
+#footer_body{
+    width:100%;
+    border:solid;
+    border-color:green;
+    height:100px;
+    background-color:lightgrey
+}
+
+#footer_logo{
+    margin-left: 20px;
+    float:left;
+    width:fit-content;
+}
+
+#footer_logo img{
+    width:80px;
+}
+
+#footer_content{
+    float:left;
+    margin:10px;
+    
+    width:60%;
+    min-height:50px;
+}
+
+#footer_sns{
+    float:right;
+    margin: 20px;
+    
+    width: 100px;
+}
+
