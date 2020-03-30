@@ -3,10 +3,7 @@ import './Header.css';
 
 
 export class Header extends Component{
-    constructor(props){
-        super(props);
-
-    }
+   
 
     
 
@@ -32,7 +29,7 @@ export class Header extends Component{
                 
                 <div id="header_inner_body">
                     <div id="header_inner_body_logo">
-                        <img src={require("../../../assets/logo/logo_full_white.png")}></img>
+                        <img src={require("../../../assets/logo/logo_full_white.png")} alt="bg_logo"></img>
                     </div>
                     <div id="header_inner_body_search">
                         <input type="text" placeholder="이쁜 이미지 찾기">

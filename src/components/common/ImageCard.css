@@ -1,0 +1,61 @@
+
+
+/* container for imagecard. need to wrap cards with this*/
+.imagecard_container{
+    max-width: 1400px;
+    margin: 10px auto;
+}
+
+
+.imagecard_body{
+    position: relative;
+    display:inline-block;
+    margin : 5px;
+    background-color: black;
+}
+
+
+.imagecard_body img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    display: block;
+    max-width:100%;
+    max-height:100%;
+    object-fit: contain;
+    margin: 0px auto;
+}
+
+
+/*
+.imagecard_container{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap:wrap;
+    padding: 4px;
+}
+
+
+.imagecard_body{
+    -ms-flex: 25%;
+    flex: 25%;
+    max-width:25%;
+    padding: 4px;
+    position: relative;
+    display: inline-block;
+    background-color: black;
+}
+
+.imagecard_body img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    display: block;
+    max-width:100%;
+    max-height:100%;
+    object-fit: contain;
+    margin: 0px auto;
+}*/
