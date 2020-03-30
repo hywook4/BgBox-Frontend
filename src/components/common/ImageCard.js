@@ -9,28 +9,25 @@ export class ImageCard extends Component{
     }
 
     render(){
-        const space = 50;
+        let space = 0;
         let colNum = 0;
         let width = 0;
+        let cardMargin = 9;
 
         if(this.props.parentWidth<=400){
             colNum = 1;
-
         } else if(this.props.parentWidth>400 && this.props.parentWidth<=800){
             colNum = 2;
         } else if(this.props.parentWidth>800 && this.props.parentWidth<=1200){
             colNum = 3;
-        } else if(this.props.parentWidth>1200 && this.props.parentWidth<=1600){
+        } else if(this.props.parentWidth>1200 && this.props.parentWidth<=1400){
             colNum = 4;
-        } else if(this.props.parentWidth>1600 && this.props.parentWidth<=2000){
-            colNum = 5;
-        } else{
-            colNum = 6;
         }
+        
+        space = cardMargin*2*colNum + colNum;
 
-        width = (this.props.parentWidth-space*colNum)/colNum;
+        width = (this.props.parentWidth-space)/colNum;
 
-        //let width = (this.props.parentWidth - 77)/3;
         let height = width*2;
         let cardStyle = {
             width: String(width)+"px",
@@ -45,5 +42,13 @@ export class ImageCard extends Component{
                 <img src={require('./images/'+this.props.fileName)} alt="test"/>
             </div>
         )
+        
+        /*
+        return(
+            <div className="imagecard_body">
+                <img src={require('./images/'+this.props.fileName)} alt="test"/>
+            </div>
+        )*/
+
     }
 }

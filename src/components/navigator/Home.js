@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
+
 import './Home.css';
 import {Loading} from '../common/Loading';
 import {ImageCard} from '../common/ImageCard';
+
+
 
 export class Home extends Component{
     constructor(props){
@@ -17,21 +20,24 @@ export class Home extends Component{
                 "6.jpg",
                 "7.jpg"
             ],
-            windowWidth: 0
+            parentWidth: 0
         };
         
+        this.ref = React.createRef();
+        this.element = null;
         this.updateDimensions = this.updateDimensions.bind(this);
     };
 
+    
+
     updateDimensions(){
-        console.log("called");
         this.setState({
-            windowWidth: window.innerWidth
+            parentWidth: this.element.clientWidth
         })
     }
 
     componentDidMount(){
-        console.log("mount");
+        this.element = this.ref.current;
         this.updateDimensions();
         window.addEventListener("resize", this.updateDimensions);
     }
@@ -45,13 +51,16 @@ export class Home extends Component{
     render(){
 
         return(
+            
             <div id="home_body">
-                {
-                    this.state.data.length === 0 ? <Loading/> : 
-                    this.state.data.map((d, i) => {
-                        return <ImageCard fileName={d} parentWidth={this.state.windowWidth}/>
-                    })
-                }
+                <div class="imagecard_container" ref={this.ref}>
+                    {
+                        this.state.data.length === 0 ? <Loading/> : 
+                        this.state.data.map((d, i) => {
+                            return <ImageCard fileName={d} parentWidth={this.state.parentWidth}/>
+                        })
+                    }
+                </div>
             </div>
         )
     }
