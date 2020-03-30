@@ -6,7 +6,11 @@ import './ImageCard.css';
 export class ImageCard extends Component{
     constructor(props){
         super(props);
+        
+        this.dummy = null;
     }
+
+    
 
     render(){
         let space = 0;
@@ -39,7 +43,7 @@ export class ImageCard extends Component{
 
         return(
             <div className="imagecard_body" style={cardStyle}>
-                <img src={require('./images/'+this.props.fileName)} alt="test"/>
+                <img src={this.props.imgData.largeImageURL} alt={this.props.imgData.id}/>
             </div>
         )
         
