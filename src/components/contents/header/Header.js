@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './Header.css';
 
+import {SearchBar} from '../../common/SearchBar';
+
 
 export class Header extends Component{
    
@@ -31,14 +33,11 @@ export class Header extends Component{
                     <div id="header_inner_body_logo">
                         <img src={require("../../../assets/logo/logo_full_white.png")} alt="bg_logo"></img>
                     </div>
-                    <div id="header_inner_body_search">
-                        <input type="text" placeholder="이쁜 이미지 찾기">
-                        </input>
-                        <i className="fa fa-search"></i>
-                    </div>
+                    <SearchBar/>
                     <div id="header_inner_body_subtitle">
                         <h4>카테고리, 테마, 제목으로 다양한 이미지를 검색해보세요!</h4>
                     </div>
+                    
                 </div>
             </div>
         )

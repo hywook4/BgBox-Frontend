@@ -1,0 +1,76 @@
+
+.searchbar_container
+{
+    min-width: 350px;
+    max-width: 500px;
+    width: 70%;
+    padding: 5px;
+    margin: 10px auto;
+    background-color: lightgray;
+    border-radius: 15px;
+    box-shadow: 0 0px 20px #e7d8d8, 0 0 0 5px #534d4deb;
+    display: block;
+    height: 35px;
+}
+
+
+.searchbar_text
+{   
+    display: block;
+    float: left;
+    width:fit-content;
+    width: 80%;
+}
+
+.searchbar_text input[type="text"]{
+    display:block;
+    width:100%;
+    color: #fff;
+    font-family: Nunito;
+    padding: 0px 10px;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+    height: 30px;
+    font-size: 20px;
+}
+
+.searchbar_text input[type="text"]::placeholder{
+    color: darkgray;
+}
+
+.searchbar_text input[type="text"]:focus{
+    outline:none;
+}
+
+
+.searchbar_submit{
+    display: block;
+    width:fit-content;
+    float: right;
+}
+
+
+.searchbar_submit button{
+    color: #fff;
+    font-family: Nunito;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+
+    display: block;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.searchbar_submit button:focus{
+    outline:none;
+}
+
+.searchbar_submit button i{
+    font-size: 25px;
+}
+
+
